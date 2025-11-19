@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to bottom, #e7f7e7, #d0f0c0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+    border-radius: 20px;
+    border: 2px solid #4caf50;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background-color: #f0fff0;
+}
+
+.login-card h3 {
+    color: #2f8f2f;
+    font-weight: bold;
+}
+
+.login-card h4 {
+    color: #4caf50;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+}
+
+.btn-primary:hover {
+    background-color: #3b7d3b;
+    border-color: #3b7d3b;
+}
+
+a {
+    color: #2f8f2f;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1f5f1f;
+}

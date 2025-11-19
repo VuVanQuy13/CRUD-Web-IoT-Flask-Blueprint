@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Dashboard 🌿</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body { background: #ecf7ec; }
+        .navbar-agri { background: #4CAF50; }
+        .card-agri { border-left: 6px solid #4CAF50; border-radius: 12px; }
+        .sensor-value { font-size: 22px; font-weight: bold; color: #2f8f2f; }
+        .device-btn { min-width: 90px; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-dark navbar-agri px-4">
+        <h3 class="text-white m-0">🌱 Hệ Thống Farm – ID {{ farm_id }}</h3>
+
+        <div>
+            <a href="/board" class="btn btn-light btn-sm">⬅ Danh Sách Farm</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+
+        <!-- MENU -->
+        <ul class="nav nav-tabs mb-3" id="farmTab">
+            <li class="nav-item">
+                <button class="nav-link active" id="sensor-tab" data-bs-toggle="tab" data-bs-target="#sensor">
+                    🌡 Cảm biến
+                </button>
+            </li>
+
+            <li class="nav-item">
+                <button class="nav-link" id="device-tab" data-bs-toggle="tab" data-bs-target="#device">
+                    💡 Luật điều khiển
+                </button>
+            </li>
+        </ul>
+
+
+        <!-- TAB CONTENT -->
+        <div class="tab-content">
+
+            <!-- TAB SENSORS -->
+            <div class="tab-pane fade show active" id="sensor">
+
+                <div class="card card-agri shadow-sm p-4 mb-4">
+                    <h4 class="fw-bold mb-3">🌤 Giá trị cảm biến (ví dụ)</h4>
+
+                    <div class="row text-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="card p-3 shadow-sm">
+                                <h5>Nhiệt độ</h5>
+                                <p class="sensor-value">28°C</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="card p-3 shadow-sm">
+                                <h5>Độ ẩm</h5>
+                                <p class="sensor-value">65%</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <div class="card p-3 shadow-sm">
+                                <h5>Bụi mịn PM2.5</h5>
+                                <p class="sensor-value">35 µg/m³</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- TAB DEVICES -->
+            <div class="tab-pane fade" id="device">
+
+                <div class="card card-agri shadow-sm p-4 mb-4">
+                    <h4 class="fw-bold mb-3">💡 Luật Điều Khiển Thiết Bị</h4>
+
+                    <table class="table table-bordered">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Thiết Bị</th>
+                                <th>Điều Kiện</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Máy Bơm Nước</td>
+                                <td>Độ ẩm < 40%</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm device-btn">Bật</button>
+                                    <button class="btn btn-danger btn-sm device-btn">Tắt</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Quạt Làm Mát</td>
+                                <td>Nhiệt độ > 32°C</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm device-btn">Bật</button>
+                                    <button class="btn btn-danger btn-sm device-btn">Tắt</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Đèn Sưởi</td>
+                                <td>Nhiệt độ < 20°C</td>
+                                <td>
+                                    <button class="btn btn-success btn-sm device-btn">Bật</button>
+                                    <button class="btn btn-danger btn-sm device-btn">Tắt</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

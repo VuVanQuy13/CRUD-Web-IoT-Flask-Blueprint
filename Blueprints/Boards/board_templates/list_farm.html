@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm 🌾🌱</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #e6f2e6; /* xanh nhẹ, nông nghiệp */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar-agri {
+            background-color: #4caf50 !important; /* navbar xanh lá */
+        }
+
+        .navbar-agri h3 {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .card-agri {
+            border-left: 5px solid #4caf50;
+            border-radius: 12px;
+            background-color: #f0fff0;
+        }
+
+        .farm-title {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+
+        .farm-btn {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+        }
+
+        .farm-btn:hover {
+            background-color: #388e3c;
+        }
+
+        table th, table td {
+            vertical-align: middle;
+        }
+
+        .btn-edit {
+            background-color: #ffb74d;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-edit:hover {
+            background-color: #fb8c00;
+        }
+
+        .btn-delete {
+            background-color: #e57373;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-delete:hover {
+            background-color: #d32f2f;
+        }
+
+        .btn-select {
+            background-color: #64b5f6;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-select:hover {
+            background-color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-agri px-3 mb-4">
+        <h3 class="m-0">🌿 Quản Lý Farm</h3>
+        <a href="{{ url_for('login.log_out') }}" class="btn btn-light btn-sm">Đăng xuất</a>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Add farm -->
+        <div class="card card-agri shadow-sm p-4">
+            <h4 class="farm-title mb-3">➕ Thêm Vườn Mới</h4>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Tên Vườn</label>
+                    <input type="text" id="namefarm" class="form-control" placeholder="Nhập tên vườn..." required>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Mô tả</label>
+                    <input type="text" id="description" class="form-control" placeholder="Mô tả ngắn...">
+                </div>
+ 
+                <div class="col-md-4 d-flex align-items-end">
+                    <button class="btn farm-btn w-100" id="btnAdd">🌱 Thêm Vườn</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- List farm -->
+        <table class="table table-bordered mt-3" id="farmTable">
+            <thead class="table-success">
+                <tr>
+                    <th style="width: 80px;">ID</th>
+                    <th style="width: 200px;">Tên Farm</th>
+                    <th style="width: 50%;">Mô Tả</th>
+                    <th style="width: 150px;">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for farm in all_farms %}
+                    <tr data-id="{{ farm.id }}">
+                        <td>{{ farm.id }}</td>
+                        <td class="farm-name">{{ farm.namefarm }}</td>
+                        <td class="farm-desc">{{ farm.description }}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm btn-edit">Sửa</button>
+                            <button class="btn btn-danger btn-sm btn-delete">Xóa</button>
+                            <button class="btn btn-primary btn-sm btn-select">Chọn</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="{{ url_for('board.static', filename='board.js') }}"> </script>
+</body>
+</html>
