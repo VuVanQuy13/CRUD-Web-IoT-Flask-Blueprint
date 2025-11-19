@@ -106,13 +106,16 @@ Mặc định chạy tại:
 [http://127.0.0.1:2004/](http://192.168.1.6:2004/)
 
 #### 📸 Ảnh giao diện:
-<img width="1915" height="907" alt="image" src="https://github.com/user-attachments/assets/a5a35a1d-bfda-415d-aeee-1293aa08a973" />
+<img width="1915" height="907" alt="Screenshot 2025-11-19 175642" src="https://github.com/user-attachments/assets/f4308cc0-54c1-4fa9-8f8b-eb2be6380b4a" />
 
-<img width="1912" height="898" alt="image" src="https://github.com/user-attachments/assets/0334c156-9899-446f-ae9b-dc9adec06478" />
+<img width="1912" height="898" alt="Screenshot 2025-11-19 175703" src="https://github.com/user-attachments/assets/a5e186ef-560d-42a8-8adb-2a1127bcd5bf" />
 
-<img width="1914" height="903" alt="image" src="https://github.com/user-attachments/assets/cf0e4435-5d91-4bed-9e04-4d7641da654c" />
+<img width="1914" height="903" alt="Screenshot 2025-11-19 175738" src="https://github.com/user-attachments/assets/2aa0d852-b9cf-499e-b2bf-b6d17e17b10b" />
+
 
 ## Khi chọn 1 farm:
-<img width="1910" height="910" alt="image" src="https://github.com/user-attachments/assets/d244c39a-3522-4ea4-ab49-d82a5469268c" />
-<img width="1916" height="915" alt="image" src="https://github.com/user-attachments/assets/4e1753da-23bc-4197-9d02-83f7830136a6" />
+<img width="1910" height="910" alt="Screenshot 2025-11-19 175805" src="https://github.com/user-attachments/assets/205d7048-c3c6-4699-a0e6-b5c5f543607f" />
+
+<img width="1916" height="915" alt="Screenshot 2025-11-19 175821" src="https://github.com/user-attachments/assets/ca6e3780-5478-43cc-b0ee-0d3f65b5da75" />
+
 
