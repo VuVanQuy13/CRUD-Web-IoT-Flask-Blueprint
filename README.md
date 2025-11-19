@@ -1,0 +1,118 @@
+# Demo Web IoT – Flask Blueprint + SQLite
+
+Ứng dụng web mô phỏng quản lý hệ thống IoT đơn giản, bao gồm: đăng ký / đăng nhập, hiển thị dữ liệu cảm biến, và CRUD dữ liệu Farm – Boards.  
+Dự án áp dụng **Flask Blueprint** để tách module rõ ràng, dễ mở rộng và bảo trì.
+
+---
+
+## 🚀 Tính năng chính
+
+### 🔐 Authentication
+- Đăng ký tài khoản (có nhập lại mật khẩu)
+- Đăng nhập + lưu session
+- Chặn truy cập nếu chưa login
+
+### 📊 IoT Dashboard
+- Hiển thị dữ liệu cảm biến mẫu (nhiệt độ, độ ẩm, bụi)
+- Mô phỏng giao diện điều khiển thiết bị
+
+### 📝 CRUD (Farm / Boards)
+- Thêm – Xóa – Sửa – Xem chi tiết dữ liệu
+- Kết nối backend bằng REST API
+- Template riêng cho từng module
+
+### 🧩 Kiến trúc Blueprint
+- `Auths/` – xử lý đăng ký, đăng nhập  
+- `Boards/` – hiển thị & quản lý board  
+- `Farms/` – CRUD farm  
+- Mỗi Blueprint có **templates** và **static** riêng
+
+---
+
+## 🛠️ Công nghệ sử dụng
+
+| Công nghệ | Mục đích |
+|----------|----------|
+| **Python 3.x** | Ngôn ngữ chính |
+| **Flask** | Web framework |
+| **Flask Blueprint** | Tổ chức module |
+| **SQLite3** | Cơ sở dữ liệu |
+| **HTML – CSS – JS** | Giao diện |
+| **Bootstrap** | Tối ưu UI |
+| **Fetch API** | Kết nối frontend – backend |
+
+---
+
+## 📁 Cấu trúc dự án
+
+```
+CRUD_Web_HDH/
+│── app.py
+│── database.db
+│── initDB_login.py
+│── requirements.txt
+│
+├── Blueprints/
+│   ├── Auths/
+│   │   ├── login.py
+│   │   ├── register.py
+│   │   ├── auth_templates/
+│   │   │   ├── login.html
+│   │   │   └── register.html
+│   │   └── static/auth.css
+│   │
+│   ├── Boards/
+│   │   ├── board.py
+│   │   ├── board_templates/list_farm.html
+│   │   └── static/board.js
+│   │
+│   └── Farms/
+│       ├── farm.py
+│       ├── farm_templates/farm.html
+│       └── static/...
+│
+└── Web_env/ (virtual environment)
+```
+
+
+
+---
+
+## ▶️ Cách chạy dự án
+
+### 1. Clone dự án:
+
+bash
+git clone https://github.com/<your-username>/<repo-name>.git
+cd <repo-name>
+
+### 2. Tạo môi trường ảo:
+python -m venv venv
+
+### 3. Kích hoạt env:
+Windows:
+venv\Scripts\activate
+
+Linux/macOS:
+source venv/bin/activate
+
+### 4. Cài thư viện:
+pip install -r requirements.txt
+
+### 5. Chạy ứng dụng:
+python app.py
+
+Mặc định chạy tại:
+[http://127.0.0.1:2004/](http://192.168.1.6:2004/)
+
+#### 📸 Ảnh giao diện:
+<img width="1915" height="907" alt="image" src="https://github.com/user-attachments/assets/a5a35a1d-bfda-415d-aeee-1293aa08a973" />
+
+<img width="1912" height="898" alt="image" src="https://github.com/user-attachments/assets/0334c156-9899-446f-ae9b-dc9adec06478" />
+
+<img width="1914" height="903" alt="image" src="https://github.com/user-attachments/assets/cf0e4435-5d91-4bed-9e04-4d7641da654c" />
+
+## Khi chọn 1 farm:
+<img width="1910" height="910" alt="image" src="https://github.com/user-attachments/assets/d244c39a-3522-4ea4-ab49-d82a5469268c" />
+<img width="1916" height="915" alt="image" src="https://github.com/user-attachments/assets/4e1753da-23bc-4197-9d02-83f7830136a6" />
+
